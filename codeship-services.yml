@@ -6,7 +6,16 @@ demo:
     - redis
     - postgres
   environment:
-    TEST_TOKEN: HelloFromTestTokenWoo!  
+    TEST_TOKEN: HelloFromTestTokenWoo!
+  volumes:
+    - ./tmp:/code
+  cached: true
+demo_volumes:
+  build:
+    image: myapp_volumes
+    dockerfile: Dockerfile.volumes
+  volumes_from:
+    - demo
 redis:
   image: healthcheck/redis:alpine
 postgres:
