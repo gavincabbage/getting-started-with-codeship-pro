@@ -1,5 +1,5 @@
 - type: parallel
-  name: test
+  name: run
   steps:
     - name: ruby
       service: demo
