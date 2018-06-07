@@ -1,7 +1,7 @@
 demo:
   build:
     image: myapp
-    dockerfile: Dockerfile
+    dockerfile: demo.Dockerfile
   depends_on:
     - redis
     - postgres
@@ -13,7 +13,7 @@ demo:
 demo_volumes:
   build:
     image: myapp_volumes
-    dockerfile: Dockerfile.volumes
+    dockerfile: volumes.Dockerfile
   volumes_from:
     - demo
 redis:
