@@ -1,22 +1,23 @@
 demo:
   build:
-    image: myapp
+    image: demo
     dockerfile: demo.Dockerfile
-  depends_on:
-    - redis
-    - postgres
-  environment:
-    TEST_TOKEN: HelloFromTestTokenWoo!
-  volumes:
-    - ./tmp:/code
-  cached: true
-demo_volumes:
-  build:
-    image: myapp_volumes
-    dockerfile: volumes.Dockerfile
-  volumes_from:
-    - demo
-redis:
-  image: healthcheck/redis:alpine
-postgres:
-  image: healthcheck/postgres:alpine
+  # depends_on:
+  #   - redis
+  #   - postgres
+  # environment:
+  #   TEST_TOKEN: HelloFromTestTokenWoo!
+    # TEST_GETTING_DEFAULTS: ${CI_BRANCH-nope}
+  # volumes:
+  #   - ./tmp:/code
+  # cached: true
+# demo_volumes:
+#   build:
+#     image: myapp_volumes
+#     dockerfile: volumes.Dockerfile
+#   volumes_from:
+#     - demo
+# redis:
+#   image: healthcheck/redis:alpine
+# postgres:
+#   image: healthcheck/postgres:alpine
